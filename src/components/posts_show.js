@@ -19,7 +19,7 @@ class PostShow extends Component {
   render(){
     const { post } = this.props;
 
-    if(!posts) {
+    if(!post) {
       return <div>Loadin...</div>;
     }
 
