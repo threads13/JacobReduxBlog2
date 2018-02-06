@@ -14,13 +14,13 @@ class PostsIndex extends Component {
     return _.map(this.props.posts, post => {
       return (
         <li style={{marginTop: '1em'}} className="list-group-item" key={post.id}>
-          <Link to={`/pots/%{id}`}>
+          <Link style={{fontSize: '1.3em', color: 'green'}}to={`/pots/%{id}`}>
             {post.title}
           </Link>
           <p style={{marginTop: '0.3em'}}>
             {post.categories}
           </p>
-          <p style={{marginTop: '1em'}}>
+          <p style={{marginTop: '2.5em'}}>
             {post.content}
           </p>
         </li>
@@ -31,12 +31,12 @@ class PostsIndex extends Component {
   render() {
     return (
       <div>
-        <div style={{marginTop: '2em'}} className="post-index text-right">
+        <div style={{marginTop: '1.5em'}} className="post-index text-right">
           <Link className="btn btn-primary" to="/posts/new">
             Add a Post
           </Link>
         </div>
-        <h2>Posts</h2>
+        <h2>Jacob's React/Redux Blog</h2>
         <ul style={{maxWidth: '75%'}} className="list-group">
           {this.renderPosts()}
         </ul>

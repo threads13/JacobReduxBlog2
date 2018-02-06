@@ -19,7 +19,7 @@ const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <BrowserRouter>
-      <div className="container-fluid">
+      <div style={{fontFamily: 'Roboto Condensed'}} className="container-fluid">
         <Switch>
           <Route path="/posts/new" component={PostsNew} />
           <Route path="/posts/:id" component={PostShow} />
