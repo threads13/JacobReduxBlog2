@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom';
 
 class PostShow extends Component {
   componentDidMount(){
-    const { id } = this.props.match.params.id;
+    const { id } = this.props.match.params;
     this.props.fetchPost(id);
   }
 
   onDeleteClick(){
-    const { id } = this.props.match.params.id;
+    const { id } = this.props.match.params;
     this.props.deletePost(id, () => {
       this.props.history.push('/');
     });
@@ -26,15 +26,17 @@ class PostShow extends Component {
     return (
       <div>
         <Link to="/">Back To Index</Link>
-        <button
-          className="btn btn-danger pull-xs-right"
-          onClick={this.onDeleteClick.bind(this)}
-        >
-          Delete Post
-        </button>
+        <div className="text-right">
+          <button
+            className="btn btn-danger"
+            onClick={this.onDeleteClick.bind(this)}
+          >
+            Delete Post
+          </button>
+        </div>
         <h3>{post.title}</h3>
         <h6>Categories: {post.categories}</h6>
-        <p>{post.content}</p>
+        <p style={{marginTop: '2.5em', maxWidth: '75%'}}>{post.content}</p>
       </div>
     );
   }
