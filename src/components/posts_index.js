@@ -14,7 +14,7 @@ class PostsIndex extends Component {
     return _.map(this.props.posts, post => {
       return (
         <li style={{marginTop: '1em'}} className="list-group-item" key={post.id}>
-          <Link style={{fontSize: '1.3em', color: 'green'}}to={`/pots/%{id}`}>
+          <Link style={{fontSize: '1.3em', color: 'green'}} to={`/posts/${post.id}`}>
             {post.title}
           </Link>
           <p style={{marginTop: '0.3em'}}>

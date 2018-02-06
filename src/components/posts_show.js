@@ -28,7 +28,7 @@ class PostShow extends Component {
         <Link to="/">Back To Index</Link>
         <button
           className="btn btn-danger pull-xs-right"
-          onClick={this.onDeleteClick.bing(this)}
+          onClick={this.onDeleteClick.bind(this)}
         >
           Delete Post
         </button>
