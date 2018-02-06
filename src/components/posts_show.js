@@ -24,8 +24,8 @@ class PostShow extends Component {
     }
 
     return (
-      <div>
-        <Link to="/">Back To Index</Link>
+      <div  className="posts-show container-fluid">
+        <Link  to="/">Back To Index</Link>
         <div className="text-right">
           <button
             className="btn btn-danger"

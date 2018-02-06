@@ -13,13 +13,12 @@ import PostsNew from './components/posts_new';
 import PostShow from './components/posts_show';
 import registerServiceWorker from './registerServiceWorker';
 
-
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <BrowserRouter>
-      <div style={{fontFamily: 'Roboto Condensed'}} className="container-fluid">
+      <div style={{fontFamily: 'Roboto Condensed', marginTop: '1.5em'}} className="container-fluid">
         <Switch>
           <Route path="/posts/new" component={PostsNew} />
           <Route path="/posts/:id" component={PostShow} />
