@@ -1,4 +1,4 @@
-import './index.css';
+import './style/style.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 import React from 'react';
@@ -19,7 +19,7 @@ const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <BrowserRouter>
-      <div>
+      <div className="container-fluid">
         <Switch>
           <Route path="/posts/new" component={PostsNew} />
           <Route path="/posts/:id" component={PostShow} />

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchPosts } from '../actions';
 import _ from 'lodash';
 import { Link } from 'react-router-dom';
+import '../style/style.css';
 
 class PostsIndex extends Component {
   componentDidMount(){
@@ -12,10 +13,16 @@ class PostsIndex extends Component {
   renderPosts(){
     return _.map(this.props.posts, post => {
       return (
-        <li className="list-group-item" key={post.id}>
+        <li style={{marginTop: '1em'}} className="list-group-item" key={post.id}>
           <Link to={`/pots/%{id}`}>
             {post.title}
           </Link>
+          <p style={{marginTop: '0.3em'}}>
+            {post.categories}
+          </p>
+          <p style={{marginTop: '1em'}}>
+            {post.content}
+          </p>
         </li>
       );
     });
@@ -24,13 +31,13 @@ class PostsIndex extends Component {
   render() {
     return (
       <div>
-        <div className="text-xs-right">
+        <div style={{marginTop: '2em'}} className="post-index text-right">
           <Link className="btn btn-primary" to="/posts/new">
             Add a Post
           </Link>
         </div>
-        <h3>Posts</h3>
-        <ul className="list-group">
+        <h2>Posts</h2>
+        <ul style={{maxWidth: '75%'}} className="list-group">
           {this.renderPosts()}
         </ul>
       </div>
